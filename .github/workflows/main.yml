@@ -3,7 +3,7 @@ name: Daily Gym Bot
 # Запуск каждый день в 10:00 UTC и вручную
 on:
   schedule:
-    - cron: '0 10 * * *'  # каждый день в 10:00 UTC
+    - cron: '0 8 * * *'  # каждый день в 10:00 UTC
   workflow_dispatch:     # запуск вручную
 
 jobs:
