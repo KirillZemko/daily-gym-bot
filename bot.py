@@ -7,7 +7,7 @@ def main():
     # =============================
     # Получаем токен и chat_id из переменных окружения
     # =============================
-    TOKEN = os.environ["8556828197:AAGivLhNfxbL7i_zNnGucH_9bQUJZkPEQ6s"]        # Твой токен бота
+    TOKEN = os.environ["8556828197:AAGivLhNfxbL7i_zNnGucH_9bQUJZkPEQ6s"]
     CHAT_ID = int(os.environ["24528498"])  # ID группы или чата
 
     bot = Bot(token=TOKEN)
