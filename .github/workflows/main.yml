@@ -1,0 +1,33 @@
+name: Daily Gym Bot
+
+# Запуск каждый день в 10:00 UTC и вручную
+on:
+  schedule:
+    - cron: '0 10 * * *'  # каждый день в 10:00 UTC
+  workflow_dispatch:     # запуск вручную
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Скачиваем репозиторий
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Устанавливаем Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      # Устанавливаем зависимости
+      - name: Install dependencies
+        run: pip install python-telegram-bot==20.7
+
+      # Запускаем бот
+      - name: Run bot
+        run: python bot.py
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
