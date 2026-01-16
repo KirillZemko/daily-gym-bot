@@ -45,7 +45,7 @@ phrase = random.choice(phrases)
 emoji = random.choice(emojis)
 
 # Формируем сообщение
-message = f"Валентин, сегодня уже {today}! \n {phrase} {emoji} \n До окончания активации абонемента осталось всего {days_left} дней."
+message = f"Валентин, сегодня уже {today} {emoji}! \n{phrase} {emoji} \nДо окончания активации абонемента осталось всего {days_left} дней."
 
 async def send_message():
     async with Bot(token=TOKEN) as bot:
